@@ -1,0 +1,318 @@
+/* Общие сбросы стилей */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили для body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Заголовок первого уровня */
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+/* Абзацы */
+p {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+/* Слайд */
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 950px;
+    margin-bottom: 6.25rem;
+    position: relative;
+}
+
+.slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slideContent {
+    max-height: 25rem;
+    max-width: 37.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.slideBtn {
+    background: #FF6F61;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    height: 3.125rem;
+    width: 15.625rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 1rem 0.625rem;
+    color: #FFF;
+}
+
+.slideBtn:hover {
+    background: #fc4838;
+}
+
+/* Анимация стрелки вниз */
+.arrowDown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 12.5rem;
+    left: -20px;
+    animation: arrowDown 1.5s ease-in-out infinite;
+}
+
+.arrowDown img {
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+@keyframes arrowDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0.625rem);
+    }
+}
+
+/* Основное содержимое */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.25rem;
+}
+
+/* Информационные блоки и контент */
+.info, .content, .content2 {
+    margin-bottom: 6.25rem;
+    max-width: 50rem;
+    text-align: left;
+}
+
+/* Заголовки внутри content */
+.headText, .headText2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.headText h1 {
+    font-size: 3.125rem;
+}
+
+.headText2 h1 {
+    font-size: 2.5rem;
+}
+
+/* Блоки с сеткой */
+.block {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 0.625rem;
+}
+
+.block .item {
+    padding: 0.625rem;
+    border-bottom: 1px solid #999;
+}
+
+/* Контент в блоке 2 */
+.block2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+}
+
+.block2 p {
+    font-size: 0.8125rem;
+    text-align: center;
+}
+
+.block2 button {
+    background: #FF6F61;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    height: 3.125rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 1rem 0.625rem;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+/* Стили для инпутов */
+input {
+    font-size: 1.125rem;
+    border: 2px solid #999;
+    border-radius: 12px;
+    padding: 0.625rem;
+    height: 3.125rem;
+    width: 100%;
+    margin-bottom: 0.625rem;
+}
+
+/* Футер */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: grid;
+}
+
+.footerContent {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footerSection {
+    margin: auto 0;
+    text-align: left;
+}
+
+.footerSection p, .footerSection a {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.footerSection a:hover {
+    text-decoration: underline;
+}
+
+/* Встраиваемый элемент */
+.inframe {
+    width: 100%;
+    height: 20rem;
+    border: none;
+    margin-top: 2rem;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (min-width: 480px) and (max-width: 768px) {
+    .slide {
+        margin-bottom: 3.125rem;
+    }
+
+    .slideContent {
+        padding: 1.25rem;
+    }
+
+    .slideBtn {
+        width: 11.25rem;
+        height: 2.5rem;
+        font-size: 0.75rem;
+    }
+
+    .arrowDown {
+        left: -20px;
+        top: 220px;
+    }
+
+    .info, .content, .content2 {
+        margin: 3.125rem 1.25rem;
+        max-width: 100%;
+    }
+
+    .headText h1, .headText2 h1 {
+        font-size: 1.875rem;
+    }
+
+    .block {
+        grid-template-columns: 1fr;
+    }
+
+    .arrowDown img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .block2 {
+        gap: 0.3125rem;
+    }
+
+    .block2 p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    .slide {
+        height: 600px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .slideContent {
+        min-height: 400px;
+        background: rgba(173, 173, 173, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+    }
+
+    .slideBtn {
+        width: 11.25rem;
+        height: 2.5rem;
+        font-size: 0.75rem;
+    }
+
+    .arrowDown {
+        left: -20px;
+        top: 50px;
+    }
+
+    .content {
+        margin: 3.125rem 0;
+    }
+
+    .block2 button {
+        font-size: 0.875rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 1.875rem;
+    }
+
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+    }
+}
